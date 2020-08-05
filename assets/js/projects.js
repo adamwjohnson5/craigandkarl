@@ -80,25 +80,27 @@ async function getProjectData(id) {
     return projectData;
 }
 
-async function loadProjectThumb(count) {
-    const projectID = window.homeProjects[(count - 1)].project.id;
-    const project = await getProjectData(projectID);
-    var subTitle = project.data.subtitle[0];
+async function loadProjectThumbs() {
+    var thumbs = '';
+    
+    // Loop all home projects
+    for (let x = 0; x < window.homeProjects.length; x++) {
+        let projectID = window.homeProjects[x].project.id;
+        let project = await getProjectData(projectID);
+        var subTitle = project.data.subtitle[0];
         
-    if (subTitle) {
-        subTitle = subTitle.text;
-    } else {
-        subTitle = '';
+        if (subTitle) {
+            subTitle = subTitle.text;
+        } else {
+            subTitle = '';
+        }
+        
+        thumbs += '<a href="javascript: projectClick(\'' + project.slugs[0] + '\', \'' + projectID + '\');" class="project-thumb" id="project-thumb-' + (x + 1) + '" data-project-id="' + projectID + '"><img src="" data-url="' + project.data.hero.url + '" /><div class="project-thumb-hover"><div class="project-thumb-text"><p><span class="thumb-text-title">' + project.data.title[0].text + '</span><span class="thumb-text-sub-title">' + subTitle + '</span></p></div></div></a>';
     }
     
-    document.querySelector('#project-thumbs').insertAdjacentHTML('beforeend', '<a href="javascript: projectClick(\'' + project.slugs[0] + '\', \'' + projectID + '\');" class="project-thumb" id="project-thumb-' + count + '" data-project-id="' + projectID + '"><img src="" data-url="' + project.data.hero.url + '" /><div class="project-thumb-hover"><div class="project-thumb-text"><p><span class="thumb-text-title">' + project.data.title[0].text + '</span><span class="thumb-text-sub-title">' + subTitle + '</span></p></div></div></a>');
-    
-    if (count !== window.homeProjects.length) {
-        loadProjectThumb(count + 1);
-    } else { // Last thumb
-        responsiveProjects(); // Set thumbs size
-        showProjectThumb(1); // Fade in first thumb
-    }
+    document.querySelector('#project-thumbs').innerHTML = thumbs; // Add to DOM
+    responsiveProjects(); // Set thumbs size
+    showProjectThumb(1); // Fade in first thumb
 }
 
 function projectClick(slug, id) {
@@ -118,7 +120,7 @@ function showProjectThumb(count) {
         if (count !== window.homeProjects.length) { // If not last project
             setTimeout(() => {
                 showProjectThumb(count + 1);
-            }, 250); // Wait for animation
+            }, 100); // Short delay
         }
     });
     

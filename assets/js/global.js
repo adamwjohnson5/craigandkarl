@@ -110,7 +110,7 @@ async function start() {
     
     setTimeout(() => {
         Pattern.init(); // Initialize Pattern
-        loadProjectThumb(1); // Start project thumbs
+        loadProjectThumbs(); // Start project thumbs
     }, 250);
 }
 
