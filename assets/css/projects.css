@@ -1,0 +1,167 @@
+/* Projects */
+
+a.project-thumb {
+    width: 50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+a.project-thumb img {
+    width: 100%;
+    opacity: 0;
+}
+
+.project-thumb-hover {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: top .25s ease-out;
+}
+
+.no-touch a.project-thumb:hover .project-thumb-hover {
+    top: 50%;
+}
+
+.project-thumb-text {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.project-thumb-text p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #FFF;
+    padding: 16px;
+}
+
+span.thumb-text-sub-title {
+    display: block;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 12px;
+    color: #B1D5EF;
+}
+
+#project {
+    position: fixed;
+    height: calc(100% - 120px);
+    width: 100%;
+    top: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+}
+
+#project-wrapper {
+    padding-bottom: 48px;
+}
+
+#project h2 {
+    margin-top: 48px;
+    opacity: 0;
+    display: none;
+    text-align: center;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.project-image {
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 48px;
+    opacity: 0;
+}
+
+.project-image img {
+    width: 100%;
+}
+
+.project-image p {
+    font-family: 'GothamBook', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    max-width: 640px;
+    margin: auto;
+    padding: 16px;
+    margin-top: 48px;
+}
+
+.project-image p a {
+    text-decoration: underline;
+}
+
+.no-touch .project-image p a:hover {
+    color: inherit;
+}
+
+#project-footer {
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    opacity: 0;
+}
+
+a.footer-project-link {
+    font-family: 'GothamBold', sans-serif;
+    line-height: 1;
+    display: inline-block;
+    margin-top: 22px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #FFF;
+}
+
+a.footer-project-link span {
+    font-family: 'GothamBook', sans-serif;
+    display: block;
+    margin-top: 8px;
+    line-height: 1.25;
+}
+
+#footer-social {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+}
+
+#footer-social a {
+    float: left;
+    margin-left: 24px;
+}
+
+#footer-social a img {
+    height: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+    #project-footer {
+        height: 160px;
+    }
+
+    a.footer-project-link {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    #footer-social {
+        top: 112px;
+        width: 100%;
+        right: 0;
+        text-align: center;
+    }
+
+    #footer-social a {
+        float: none;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+}

@@ -1,0 +1,33 @@
+/* About */
+
+.about-column {
+    width: calc(50% - 64px);
+    float: left;
+    padding: 32px;
+    opacity: 0;
+}
+
+#about-text p {
+    font-family: 'GothamBook', sans-serif;
+    font-size: 16px;
+    max-width: 960px;
+}
+
+#about-text p img {
+    height: 24px;
+    display: block;
+    margin-bottom: 32px;
+}
+
+#about-text p a {
+    font-family: 'GothamBold', sans-serif;
+}
+
+#about-text p a#about-more {
+    color: #FFCD00;
+}
+
+#about-image img {
+    width: 100%;
+    max-width: 720px;
+}
