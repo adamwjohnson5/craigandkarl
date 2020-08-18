@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function responsiveProjects() {
     const windowWidth = window.innerWidth;
+    var thumbs;
     
     if (windowWidth < 768) { // Mobile
-        var thumbs = document.querySelectorAll('.project-thumb');
+        thumbs = document.querySelectorAll('.project-thumb');
         
         for (let x = 0; x < thumbs.length; x++) {
             thumbs[x].style.width = '100%';
@@ -39,7 +40,7 @@ function responsiveProjects() {
             thumbWidth = 25; // 4 columns
         }
         
-        var thumbs = document.querySelectorAll('.project-thumb');
+        thumbs = document.querySelectorAll('.project-thumb');
         
         for (let x = 0; x < thumbs.length; x++) {
             thumbs[x].style.width = thumbWidth + '%';
