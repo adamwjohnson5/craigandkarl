@@ -21,11 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function responsiveProjects() {
     const windowWidth = window.innerWidth;
-    var thumbs;
+    const thumbs = document.querySelectorAll('.project-thumb');
     
     if (windowWidth < 768) { // Mobile
-        thumbs = document.querySelectorAll('.project-thumb');
-        
         for (let x = 0; x < thumbs.length; x++) {
             thumbs[x].style.width = '100%';
         }
@@ -39,8 +37,6 @@ function responsiveProjects() {
         } else if (windowWidth >= 1024) {
             thumbWidth = 25; // 4 columns
         }
-        
-        thumbs = document.querySelectorAll('.project-thumb');
         
         for (let x = 0; x < thumbs.length; x++) {
             thumbs[x].style.width = thumbWidth + '%';
