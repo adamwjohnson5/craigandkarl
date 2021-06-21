@@ -18,24 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('body').classList.remove('no-touch');
         window.touchScreen = true;
     });
-    
+
     // Mouse and keyboard
     setEventsGlobal();
-    
+
     // Scroll
     window.addEventListener('scroll', () => {
         //window.pageYOffset;
     });
-    
+
     // Resize
     window.addEventListener('resize', () => {
         if (! window.touchScreen) {
             responsiveGlobal();
         }
     });
-    
+
     responsiveGlobal();
-    
+
     // Start app
     setTimeout(() => {
         start();
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function responsiveGlobal() {
     const windowWidth = window.innerWidth;
     const header = document.querySelector('header');
-    
+
     if (windowWidth < 768) { // Mobile
         // Header
         document.querySelector('nav').style.display = 'none';
@@ -59,22 +59,22 @@ function responsiveGlobal() {
         } else if (! window.id) { // Check if project open
             document.querySelector('#header-clocks').style.display = '';
         }
-        
+
         // Header
         if (! window.id) { // Check if project open
             header.style.height = '';
         }
-        
+
         resetMobileNav();
-        
+
         if (window.section) {
             setNav();
         }
     }
-    
+
     // On resize finish
     clearTimeout(window.resizeTimerGlobal);
-    
+
     window.resizeTimerGlobal = setTimeout(() => {
 
     }, 250);
@@ -90,24 +90,24 @@ function setEventsGlobal() {
 
 async function start() {
     checkOldSiteURL();
-    
+
     // Clocks
     setInterval(() => {
         setClock('craig', 'America/New_York');
         setClock('karl', 'Europe/London');
     }, 1000); // Every 1 sec
-    
+
     setClock('craig', 'America/New_York');
     setClock('karl', 'Europe/London');
-    
+
     window.prismicMasterRef = await getPrismicData(''); // Get master ref from Prismic
     window.homeProjects = await getPrismicData('/documents/search?ref=' + window.prismicMasterRef + '&q=[[at(document.id,"Xm8MJhQAACMAnn-L")]]');
     await getAllProjects(1);
-    
+
     // Show header
     const rply = new Ripley(document.querySelector('header'));
     rply.animate('top', '0px', {speed: 0.25, ease: 'ease-out'});
-    
+
     setTimeout(() => {
         Pattern.init(); // Initialize Pattern
         loadProjectThumbs(); // Start project thumbs
@@ -118,12 +118,12 @@ async function start() {
 
 async function getAllProjects(page) {
     const projects = await getPrismicData('/documents/search?ref=' + window.prismicMasterRef + '&q=[[at(document.type,"project")]]&pageSize=100&page=' + page);
-    
+
     // Loop results and push into array
     for (let x = 0; x < projects.length; x++) {
         window.allProjects.push(projects[x]);
     }
-    
+
     // Next page
     if (projects.length === 100) {
         await getAllProjects(page + 1);
@@ -137,7 +137,7 @@ async function getPrismicData(path) {
         return response.json();
     }).then((data) => {
         var json = data;
-        
+
         if (! path) { // Master ref
             json = json.refs[0].ref;
         } else if (path.indexOf('document.id') !== -1) { // Home projects
@@ -145,12 +145,12 @@ async function getPrismicData(path) {
         } else { // All projects
             json = json.results;
         }
-        
+
         return json;
     }).catch((error) => {
         console.log(error);
     });
-    
+
     return apiData;
 }
 
@@ -158,25 +158,25 @@ function setClock(person, timezone) {
     const now = moment.tz(timezone);
     const clock = document.querySelector('#clocks-' + person);
     const hour = parseFloat(now.format('HH'));
-    
+
     // Text
     clock.querySelector('span.clocks-day').textContent = now.format('dddd');
     clock.querySelector('span.clocks-date').textContent = now.format('D MMM YYYY');
-    
+
     // Status
     if (hour > 8 && hour < 17) { // Is online (9 - 5)
         clock.querySelector('.clocks-status').style.backgroundColor = '#246318';
     } else {
         clock.querySelector('.clocks-status').style.backgroundColor = '';
     }
-    
+
     // Clock face
     if (hour < 6 || hour >= 18) { // Is night (6 - 6)
         clock.querySelector('.clock').style.backgroundImage = 'url(assets/img/face_night.png)';
     } else {
         clock.querySelector('.clock').style.backgroundImage = '';
     }
-    
+
     // Time
     const rotationSecs = (now.seconds() * 6);
     const rotationMins = (now.minutes() * 6 + rotationSecs / 60);
@@ -184,13 +184,13 @@ function setClock(person, timezone) {
     clock.querySelector('.hour').style.transform = 'rotate(' + rotationHours + 'deg)';
     clock.querySelector('.minute').style.transform = 'rotate(' + rotationMins + 'deg)';
     clock.querySelector('.second').style.transform = 'rotate(' + rotationSecs + 'deg)';
-    
+
     // Image
     var rand = (Math.floor(Math.random() * 3) + 1); // 1 - 3
     const initial = person.toUpperCase().charAt(0);
     const day = now.format('dddd');
     const personHour = window[person + 'Clock'];
-    
+
     if (day === 'Saturday' || day === 'Sunday') {
         clock.querySelector('img').setAttribute('src', 'assets/img/clocks/weekend-' + initial + '.gif');
     } else if (hour === 8 && personHour !== hour) {
@@ -219,7 +219,7 @@ function setClock(person, timezone) {
     } else if (personHour !== hour) {
         clock.querySelector('img').setAttribute('src', 'assets/img/clocks/24-07-' + rand + '.gif');
     }
-    
+
     window[person + 'Clock'] = hour; // Prevent image changing every second
 }
 
@@ -231,16 +231,16 @@ function showSection() {
     }
 
     const sections = document.querySelectorAll('section');
-    
+
     // Loop all sections
     for (let x = 0; x < sections.length; x++) {
         // Reset
         sections[x].style.display = '';
         sections[x].style.opacity = '';
     }
-    
+
     section.style.display = 'block'; // Show section
-    
+
     // Nav
     if (window.innerWidth >= 768) { // DT
         setNav();
@@ -252,12 +252,12 @@ function showSection() {
 function setNav() {
     const nav = document.querySelector('nav');
     const navItems = nav.querySelectorAll('a');
-    
+
     // Loop all nav items
     for (let x = 0; x < navItems.length; x++) {
         navItems[x].style.color = '';
     }
-    
+
     nav.querySelector('a#nav-' + window.section).style.color = '#FFCD00'; // Set color of selected nav item
 }
 
@@ -267,7 +267,7 @@ function navClick(section) {
 
 function showMobileNav() {
     const nav = document.querySelector('nav');
-    
+
     if (nav.style.display === 'none') { // Show
         nav.style.opacity = 0;
         nav.style.backgroundColor = '#FFCD00';
@@ -278,7 +278,7 @@ function showMobileNav() {
         nav.style.top = '0';
         nav.style.display = '';
         const navItems = nav.querySelectorAll('a');
-        
+
         // Loop all nav items
         for (let x = 0; x < navItems.length; x++) {
             let item = navItems[x];
@@ -289,7 +289,7 @@ function showMobileNav() {
             item.style.marginBottom = '16px';
             item.style.fontFamily = '\'GothamBook\', sans-serif';
         }
-        
+
         // Fade in
         const rply = new Ripley(nav);
         rply.animate('opacity', '1', {ease: 'linear'});
@@ -306,13 +306,13 @@ function resetMobileNav() {
     nav.style.position = '';
     nav.style.paddingTop = '';
     nav.style.top = '';
-    
+
     if (! window.id) { // Check if project open
         nav.style.display = '';
     }
-    
+
     const navItems = nav.querySelectorAll('a');
-    
+
     // Loop all nav items
     for (let x = 0; x < navItems.length; x++) {
         let item = navItems[x];
@@ -327,7 +327,7 @@ function resetMobileNav() {
 
 function checkOldSiteURL() {
     const url = window.location.href;
-    
+
     if (url.indexOf('#/') !== -1 || url.indexOf('#!') !== -1) {
         // Redirect old site URL
         window.location = '/';

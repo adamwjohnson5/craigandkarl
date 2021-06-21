@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             responsiveAbout();
         }
     });
-    
+
     responsiveAbout();
 });
 
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function responsiveAbout() {
     if (window.innerWidth < 768) { // Mobile
         var columns = document.querySelectorAll('.about-column');
-        
+
         for (let x = 0; x < columns.length; x++) {
             columns[x].style.width = 'calc(100% - 64px)';
         }
     } else { // DT
         var columns = document.querySelectorAll('.about-column');
-        
+
         for (let x = 0; x < columns.length; x++) {
             columns[x].style.width = '';
         }
@@ -35,11 +35,11 @@ function responsiveAbout() {
 
 function aboutLoad() {
     showSection();
-    
+
     if (window.id) {
         hideProject();
     }
-    
+
     // Fade in
     const rply = new Ripley(document.querySelector('#about-text'));
     rply.animate('opacity', '1', {speed: 0.5, ease: 'linear'});
