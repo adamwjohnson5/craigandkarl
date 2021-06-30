@@ -102,6 +102,7 @@
     margin: auto;
     padding: 16px;
     margin-top: 48px;
+    visibility: hidden;
 }
 
 #project-wrapper p a {
@@ -116,12 +117,12 @@
     max-width: 1024px;
     margin: auto;
     margin-top: 48px;
-    opacity: 0;
-    transition: opacity .5s ease-in;
 }
 
 .project-image img {
     width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease-in;
 }
 
 footer {

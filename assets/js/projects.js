@@ -169,7 +169,13 @@ function projectsShowImage(count, project) {
             projectImageFile.addEventListener('load', () => {
                 // If project hasn't changed
                 if (window.id && window.id === project) {
-                    projectImage.style.opacity = 1; // Fade in
+                    projectImageFile.style.opacity = 1; // Fade in
+
+                    if (projectImage.querySelector('p')) {
+                        // Show caption if exists
+                        projectImage.querySelector('p').style.visibility = 'visible';
+                    }
+
                     projectsShowImage(count + 1, project); // Show next image
                 }
             });
@@ -179,7 +185,11 @@ function projectsShowImage(count, project) {
             projectImageFile.setAttribute('src', dataURL + '&w=' + imageSize);
         } else {
             // Video
-            projectImage.style.opacity = 1;
+            if (projectImage.querySelector('p')) {
+                // Show caption if exists
+                projectImage.querySelector('p').style.visibility = 'visible';
+            }
+
             projectsShowImage(count + 1, project); // Show next image
         }
     } else {
