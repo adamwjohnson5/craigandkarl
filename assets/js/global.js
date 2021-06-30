@@ -40,7 +40,7 @@ function setEventsGlobal() {
         history.pushState(null, null, '.');
     });
 
-    document.querySelector('#burger').addEventListener('click', () => {
+    document.querySelector('#burger').addEventListener('click tap', () => {
         toggleNav();
     });
 }
