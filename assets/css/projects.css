@@ -6,11 +6,12 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-
 }
 
 .project-thumb img {
     width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease-in;
 }
 
 .thumb-hover {

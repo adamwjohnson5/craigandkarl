@@ -68,10 +68,9 @@ async function projectsLoadThumbs() {
 }
 
 function projectsShowThumb(count) {
-    const thumb = document.querySelector('#project-thumb-' + count);
-    const image = thumb.querySelector('img');
+    const thumb = document.querySelector('#project-thumb-' + count).querySelector('img');
 
-    image.addEventListener('load', () => {
+    thumb.addEventListener('load', () => {
         thumb.style.opacity = 1; // Fade in
 
         // Show next thumb if not last
@@ -82,9 +81,9 @@ function projectsShowThumb(count) {
         }
     });
 
-    const dataURL = image.getAttribute('data-url');
+    const dataURL = thumb.getAttribute('data-url');
     const imageSize = window.innerWidth > 768 ? 960 : 640; // Smaller res for mobile
-    image.setAttribute('src', `${ dataURL }&w=${ imageSize }&h=${ imageSize }`);
+    thumb.setAttribute('src', `${ dataURL }&w=${ imageSize }&h=${ imageSize }`);
 }
 
 /* Project */
