@@ -1,14 +1,15 @@
 /* About */
 
 .about-column {
-    width: calc(50% - 64px);
+    box-sizing: border-box;
+    width: 50%;
     float: left;
     padding: 32px;
-    opacity: 0;
+    transition: opacity 0.5s ease-in;
 }
 
 #about-text p {
-    font-family: 'GothamBook', sans-serif;
+    font-family: "GothamBook", sans-serif;
     font-size: 16px;
     max-width: 960px;
 }
@@ -20,7 +21,7 @@
 }
 
 #about-text p a {
-    font-family: 'GothamBold', sans-serif;
+    font-family: "GothamBold", sans-serif;
 }
 
 #about-text p a#about-more {
@@ -30,4 +31,10 @@
 #about-image img {
     width: 100%;
     max-width: 720px;
+}
+
+@media only screen and (max-width: 768px) {
+    .about-column {
+        width: 100%;
+    }
 }

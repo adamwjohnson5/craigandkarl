@@ -1,37 +1,39 @@
 /* Projects */
 
-a.project-thumb {
-    width: 50%;
+.project-thumb {
+    width: 20%;
     float: left;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
-}
-
-a.project-thumb img {
-    width: 100%;
     opacity: 0;
+    transition: opacity .5s ease-in;
 }
 
-.project-thumb-hover {
+.project-thumb img {
+    width: 100%;
+}
+
+.thumb-hover {
     position: absolute;
-    top: 100%;
     width: 100%;
     height: 50%;
-    background-color: rgba(0, 0, 0, 0.9);
-    transition: top .25s ease-out;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: top .15s linear;
 }
 
-.no-touch a.project-thumb:hover .project-thumb-hover {
+.no-touch .project-thumb:hover .thumb-hover {
     top: 50%;
 }
 
-.project-thumb-text {
+.thumb-text {
     display: table;
     width: 100%;
     height: 100%;
 }
 
-.project-thumb-text p {
+.thumb-text p {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -41,13 +43,33 @@ a.project-thumb img {
     padding: 16px;
 }
 
-span.thumb-text-sub-title {
+.thumb-text p span {
     display: block;
     text-transform: uppercase;
     font-size: 12px;
-    margin-top: 12px;
+    margin-top: 8px;
     color: #B1D5EF;
 }
+
+@media only screen and (max-width: 1920px) {
+    .project-thumb {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .project-thumb {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .project-thumb {
+        width: 100%;
+    }
+}
+
+/* Project */
 
 #project {
     position: fixed;
@@ -56,35 +78,24 @@ span.thumb-text-sub-title {
     top: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    z-index: 1;
+    transition: top .25s linear;
+}
+
+#project h2 {
+    margin-top: 48px;
     display: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
 }
 
 #project-wrapper {
     padding-bottom: 48px;
 }
 
-#project h2 {
-    margin-top: 48px;
-    opacity: 0;
-    display: none;
-    text-align: center;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-.project-image {
-    max-width: 1024px;
-    margin: auto;
-    margin-top: 48px;
-    opacity: 0;
-}
-
-.project-image img {
-    width: 100%;
-}
-
-.project-image p {
-    font-family: 'GothamBook', sans-serif;
+#project-wrapper p {
+    font-family: "GothamBook", sans-serif;
     font-size: 16px;
     text-align: center;
     max-width: 640px;
@@ -93,35 +104,46 @@ span.thumb-text-sub-title {
     margin-top: 48px;
 }
 
-.project-image p a {
+#project-wrapper p a {
     text-decoration: underline;
 }
 
-.no-touch .project-image p a:hover {
+.no-touch #project-wrapper p a:hover {
     color: inherit;
 }
 
-#project-footer {
+.project-image {
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 48px;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+.project-image img {
+    width: 100%;
+}
+
+footer {
     width: 100%;
     height: 80px;
     background-color: rgba(0, 0, 0, 0.2);
-    position: relative;
     text-align: center;
-    opacity: 0;
+    position: relative;
+    display: none;
 }
 
-a.footer-project-link {
-    font-family: 'GothamBold', sans-serif;
+.footer-link {
     line-height: 1;
     display: inline-block;
-    margin-top: 22px;
+    margin-top: 24px;
     padding-left: 16px;
     padding-right: 16px;
-    color: #FFF;
+    cursor: pointer;
 }
 
-a.footer-project-link span {
-    font-family: 'GothamBook', sans-serif;
+.footer-link span {
+    font-family: "GothamBook", sans-serif;
     display: block;
     margin-top: 8px;
     line-height: 1.25;
@@ -143,17 +165,22 @@ a.footer-project-link span {
 }
 
 @media only screen and (max-width: 768px) {
-    #project-footer {
+    #project h2 {
+        display: block;
+    }
+
+    footer {
         height: 160px;
     }
 
-    a.footer-project-link {
+    .footer-link {
         padding-left: 12px;
         padding-right: 12px;
     }
 
     #footer-social {
-        top: 112px;
+        top: auto;
+        bottom: 32px;
         width: 100%;
         right: 0;
         text-align: center;
