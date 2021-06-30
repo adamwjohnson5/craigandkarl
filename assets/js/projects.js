@@ -94,6 +94,8 @@ async function projectsLoad() {
         window.pattern = 'home';
         home();
 
+        document.querySelector('body').style.overflow = 'hidden'; // Disable thumbnail scrolling
+
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
@@ -128,6 +130,8 @@ async function projectsLoad() {
         document.querySelector('#project').style.top = ''; // Close
         document.querySelector('#clocks').style.visibility = '';
         document.querySelector('header h2').style.display = ''; // Hide
+
+        document.querySelector('body').style.overflow = ''; // Re-enable thumbnail scrolling
         resetMeta();
         window.projectID = 0;
     }
