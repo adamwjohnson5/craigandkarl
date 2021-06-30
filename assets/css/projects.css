@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
     opacity: 0;
-    transition: opacity .5s ease-in;
+    /* transition: opacity .5s ease-in; */
 }
 
 .project-thumb img {

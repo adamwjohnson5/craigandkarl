@@ -121,7 +121,6 @@ nav a {
    padding: 32px;
    padding-bottom: 26px; /* Reduce so even on all sides */
    display: none;
-   cursor: pointer;
 }
 
 #burger span {
