@@ -25,10 +25,10 @@
             function doAni() {
                 const test = document.querySelector('#test');
 
-                if (test.style.top === '25%') {
-                    test.style.top = '100%'; // Change to 99% to fix bug
+                if (test.style.top && test.style.top !== '100%') {
+                    test.style.top = '100%';
                 } else {
-                    test.style.top = '25%';
+                    test.style.top = '120px';
                 }
             }
         </script>
