@@ -106,9 +106,9 @@ async function projectsLoad() {
         const projectData = await projectsGetData(window.id);
         const project = document.querySelector('#project');
         //project.scrollTo(0, 0);
-        project.style.backgroundColor = projectData.data.bgcolor;
-        document.querySelector('#clocks').style.visibility = 'hidden';
-        document.querySelector('footer').style.display = ''; // Hide
+        //project.style.backgroundColor = projectData.data.bgcolor;
+        //document.querySelector('#clocks').style.visibility = 'hidden';
+        //document.querySelector('footer').style.display = ''; // Hide
 
         // Project title
         const title = projectData.data.title[0].text;
@@ -123,7 +123,7 @@ async function projectsLoad() {
         document.querySelector('title').textContent = 'Craig & Karl - ' + title;
         document.querySelector('meta[name="description"]').setAttribute('content', projectData.data.subtitle[0] ? projectData.data.subtitle[0].text : '');
 
-        projectsLoadImages(projectData.data, window.id);
+        //projectsLoadImages(projectData.data, window.id);
         window.projectID = window.id;
     } else if (window.projectID) {
         // Hide overlay
