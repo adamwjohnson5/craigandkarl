@@ -82,7 +82,7 @@
     transition: top .25s linear;
 }
 
-.a-class {
+#project.a-class {
     top: 120px;
 }
 
