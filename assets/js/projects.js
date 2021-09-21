@@ -100,7 +100,7 @@ async function projectsLoad() {
         if (! window.projectID) {
             setTimeout(() => {
                 document.querySelector('#project').style.top = '120px'; // Open
-            }, 100); // Wait for display change
+            }, 250); // Wait for display change
         }
 
         const projectData = await projectsGetData(window.id);
