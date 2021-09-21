@@ -79,7 +79,7 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 1;
-    transition: top 1.25s linear;
+    transition: top .25s linear;
 }
 
 #project h2 {
