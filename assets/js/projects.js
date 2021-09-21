@@ -105,7 +105,7 @@ async function projectsLoad() {
                 } else {
                     document.querySelector('#project').style.top = '120px';
                 }
-            }, 100); // Wait for display change
+            }, 250); // Wait for display change
         }
 
         const projectData = await projectsGetData(window.id);
