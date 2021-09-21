@@ -99,7 +99,8 @@ async function projectsLoad() {
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                document.querySelector('#project').style.top = '120px'; // Open
+                //document.querySelector('#project').style.top = '120px'; // Open
+                document.querySelector('#project').classList.add('a-class')
             }, 100); // Wait for display change
         }
 
