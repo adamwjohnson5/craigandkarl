@@ -99,7 +99,7 @@ async function projectsLoad() {
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                document.querySelector('#project').style.top = '120px'; // Open
+                document.querySelector('#project').style.top = '20%'; // Open
             }, 100); // Wait for display change
         }
 
