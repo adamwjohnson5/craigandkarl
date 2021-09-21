@@ -82,10 +82,6 @@
     transition: top .25s linear;
 }
 
-#project.a-class {
-    top: 120px;
-}
-
 #project h2 {
     margin-top: 48px;
     display: none;
