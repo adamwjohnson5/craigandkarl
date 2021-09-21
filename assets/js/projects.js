@@ -99,7 +99,12 @@ async function projectsLoad() {
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                document.querySelector('#project').style.top = 120 / window.innerHeight * 100 + '%'; // Open
+                // Open
+                if (window.touchScreen) {
+                    document.querySelector('#project').style.top = 120 / window.innerHeight * 100 + '%'; // Hack to fix Safari iOS 15 bug
+                } else {
+                    document.querySelector('#project').style.top = '120px';
+                }
             }, 100); // Wait for display change
         }
 
