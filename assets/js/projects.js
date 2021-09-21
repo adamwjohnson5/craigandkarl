@@ -101,7 +101,7 @@ async function projectsLoad() {
             setTimeout(() => {
                 // Open
                 if (window.touchScreen) {
-                    document.querySelector('#project').style.top = 120 / window.innerHeight * 100 + '%'; // Hack to fix Safari iOS 15 bug
+                    document.querySelector('#project').style.top = '10%'; // Hack to fix Safari iOS 15 bug
                 } else {
                     document.querySelector('#project').style.top = '120px';
                 }
