@@ -127,7 +127,7 @@ async function projectsLoad() {
         window.projectID = window.id;
     } else if (window.projectID) {
         // Hide overlay
-        document.querySelector('#project').style.top = ''; // Close
+        document.querySelector('#project').style.marginTop = ''; // Close
         document.querySelector('#clocks').style.visibility = '';
         document.querySelector('header h2').style.display = ''; // Hide
 
