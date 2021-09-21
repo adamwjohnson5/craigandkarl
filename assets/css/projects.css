@@ -72,7 +72,7 @@
 /* Project */
 
 #project {
-    position: absolute;
+    position: fixed;
     height: calc(100% - 120px);
     width: 100%;
     top: 90%;
