@@ -92,9 +92,9 @@ async function projectsLoad() {
     if (window.id) {
         // Ignore project slug
         window.pattern = 'home';
-        //home();
+        home();
 
-        //document.querySelector('body').style.overflow = 'hidden'; // Disable thumbnail scrolling
+        document.querySelector('body').style.overflow = 'hidden'; // Disable thumbnail scrolling
 
         // Show overlay
         if (! window.projectID) {
@@ -105,25 +105,25 @@ async function projectsLoad() {
 
         const projectData = await projectsGetData(window.id);
         const project = document.querySelector('#project');
-        //project.scrollTo(0, 0);
+        project.scrollTo(0, 0);
         project.style.backgroundColor = projectData.data.bgcolor;
-        //document.querySelector('#clocks').style.visibility = 'hidden';
-        //document.querySelector('footer').style.display = ''; // Hide
+        document.querySelector('#clocks').style.visibility = 'hidden';
+        document.querySelector('footer').style.display = ''; // Hide
 
         // Project title
-        /* const title = projectData.data.title[0].text;
+        const title = projectData.data.title[0].text;
         const projectTitle = document.querySelector('header h2');
         projectTitle.querySelector('span').textContent = title;
         projectTitle.style.display = 'table'; // Show
         const projectMobileTitle = project.querySelector('h2');
         projectMobileTitle.textContent = title;
-        projectMobileTitle.style.color = projectData.data.textcolor; */
+        projectMobileTitle.style.color = projectData.data.textcolor;
 
         // Meta
-        //document.querySelector('title').textContent = 'Craig & Karl - ' + title;
-        //document.querySelector('meta[name="description"]').setAttribute('content', projectData.data.subtitle[0] ? projectData.data.subtitle[0].text : '');
+        document.querySelector('title').textContent = 'Craig & Karl - ' + title;
+        document.querySelector('meta[name="description"]').setAttribute('content', projectData.data.subtitle[0] ? projectData.data.subtitle[0].text : '');
 
-        //projectsLoadImages(projectData.data, window.id);
+        projectsLoadImages(projectData.data, window.id);
         window.projectID = window.id;
     } else if (window.projectID) {
         // Hide overlay
