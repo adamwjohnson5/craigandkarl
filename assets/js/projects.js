@@ -103,7 +103,7 @@ async function projectsLoad() {
             }, 100); // Wait for display change
         }
 
-        const projectData = await projectsGetData(window.id);
+        //const projectData = await projectsGetData(window.id);
         const project = document.querySelector('#project');
         //project.scrollTo(0, 0);
         project.style.backgroundColor = projectData.data.bgcolor;
