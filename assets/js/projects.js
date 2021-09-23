@@ -95,16 +95,16 @@ async function projectsLoad() {
         home();
 
         document.querySelector('body').style.overflow = 'hidden'; // Disable thumbnail scrolling
+        const project = document.querySelector('#project');
 
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                document.querySelector('#project').style.top = '120px'; // Open (this doesn't animate in iOS 15 Safari for some reason)
+                project.style.top = '120px'; // Open
             }, 100); // Wait for display change
         }
 
         const projectData = await projectsGetData(window.id);
-        const project = document.querySelector('#project');
         project.scrollTo(0, 0);
         project.style.backgroundColor = projectData.data.bgcolor;
         document.querySelector('#clocks').style.visibility = 'hidden';
