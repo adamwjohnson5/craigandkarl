@@ -100,7 +100,7 @@ async function projectsLoad() {
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                project.style.top = '120px'; // Open
+                project.style.transform = 'translateY(0%)'; // Open
             }, 100); // Wait for display change
         }
 
@@ -127,7 +127,7 @@ async function projectsLoad() {
         window.projectID = window.id;
     } else if (window.projectID) {
         // Hide overlay
-        document.querySelector('#project').style.top = ''; // Close
+        document.querySelector('#project').style.transform = 'translateY(100%)'; // Close
         document.querySelector('#clocks').style.visibility = '';
         document.querySelector('header h2').style.display = ''; // Hide
 
