@@ -177,7 +177,7 @@ footer {
     }
 
     footer {
-        height: 192px;
+        height: 256px;
     }
 
     .footer-link {
@@ -188,7 +188,7 @@ footer {
 
     #footer-social {
         top: auto;
-        bottom: 64px;
+        bottom: 96px;
         width: 100%;
         right: 0;
         text-align: center;
