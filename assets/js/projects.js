@@ -82,7 +82,7 @@ function projectsShowThumb(count) {
     });
 
     const dataURL = thumb.getAttribute('data-url');
-    const imageSize = window.innerWidth > 768 ? 960 : 640; // Smaller res for mobile
+    const imageSize = window.innerWidth >= 768 ? 640 : 480; // Smaller res for mobile
     thumb.setAttribute('src', `${ dataURL }&w=${ imageSize }&h=${ imageSize }`);
 }
 
@@ -100,7 +100,7 @@ async function projectsLoad() {
         // Show overlay
         if (! window.projectID) {
             setTimeout(() => {
-                project.style.transform = 'translateY(0%)'; // Open
+                project.style.top = '120px'; // Open
             }, 100); // Wait for display change
         }
 
@@ -127,7 +127,7 @@ async function projectsLoad() {
         window.projectID = window.id;
     } else if (window.projectID) {
         // Hide overlay
-        document.querySelector('#project').style.transform = 'translateY(100%)'; // Close
+        document.querySelector('#project').style.top = ''; // Close
         document.querySelector('#clocks').style.visibility = '';
         document.querySelector('header h2').style.display = ''; // Hide
 
@@ -167,8 +167,7 @@ function projectsShowImage(count, project) {
         const projectImage = document.querySelector('#project-image-' + count)
         const projectImageFile = projectImage.querySelector('img');
 
-        // If project hasn't changed
-        if (projectImageFile && window.id && window.id === project) {
+        if (projectImageFile) {
             // Image
             projectImageFile.addEventListener('load', () => {
                 // If project hasn't changed
@@ -185,7 +184,7 @@ function projectsShowImage(count, project) {
             });
 
             const dataURL = projectImageFile.getAttribute('data-url');
-            const imageSize = window.innerWidth > 768 ? 1920 : 960; // Smaller res for mobile
+            const imageSize = window.innerWidth >= 768 ? 1280 : 960; // Smaller res for mobile
             projectImageFile.setAttribute('src', dataURL + '&w=' + imageSize);
         } else {
             // Video
