@@ -11,10 +11,11 @@ window.prismicMasterRef;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Detect mobile
-    window.addEventListener('touchstart', () => {
+    window.touchScreen = matchMedia('(hover: none)').matches;
+
+    if (window.touchScreen) {
         document.querySelector('body').classList.remove('no-touch');
-        window.touchScreen = ! window.touchScreen; // Toggle
-    });
+    }
 
     setEventsGlobal(); // Mouse and keyboard
 
