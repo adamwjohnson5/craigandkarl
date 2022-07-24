@@ -61,15 +61,17 @@ p {
 a {
 	color: #FFF;
 	text-decoration: none;
+   transition: color .15s linear;
 }
 
-.no-touch a {
-   transition: color .25s linear;
-}
-
-.no-touch a:hover,
 a:active {
    color: #FFCD00;
+}
+
+@media (hover: hover) {
+   a:hover {
+      color: #FFCD00;
+   }
 }
 
 /* Global */
@@ -272,9 +274,7 @@ header h2 span {
       transition: opacity .25s ease-in;
    }
 
-   nav a,
-   .no-touch nav a:hover,
-   .no-touch nav a:active {
+   nav a {
       color: #000 !important;
       font-family: "GothamBook", sans-serif;
       font-size: 30px;
