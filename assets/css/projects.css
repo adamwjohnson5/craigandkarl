@@ -23,6 +23,12 @@
     transition: top .15s linear;
 }
 
+@media (hover: hover) {
+    .project-thumb:hover .thumb-hover {
+        top: 50%;
+    }
+}
+
 .thumb-text {
     display: table;
     width: 100%;
@@ -45,12 +51,6 @@
     font-size: 12px;
     margin-top: 8px;
     color: #B1D5EF;
-}
-
-@media (hover: hover) {
-    .project-thumb:hover .thumb-hover {
-        top: 50%;
-    }
 }
 
 @media only screen and (max-width: 1920px) {
@@ -111,6 +111,12 @@
     text-decoration: underline;
 }
 
+@media (hover: hover) {
+    #project-wrapper p a:hover {
+        color: inherit;
+    }
+}
+
 .project-image {
     max-width: 960px;
     margin: auto;
@@ -163,12 +169,6 @@ footer {
 
 #footer-social a img {
     height: 16px;
-}
-
-@media (hover: hover) {
-    #project-wrapper p a:hover {
-        color: inherit;
-    }
 }
 
 @media only screen and (max-width: 768px) {
