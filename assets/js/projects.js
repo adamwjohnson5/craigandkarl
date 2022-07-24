@@ -158,13 +158,13 @@ function projectsLoadImages(data, project) {
         }
     }
 
-    wrapper.innerHTML = projectImages // Add to DOM
+    wrapper.innerHTML = projectImages; // Add to DOM
     projectsShowImage(1, project); // Show first image
 }
 
 function projectsShowImage(count, project) {
     if (document.querySelector('#project-image-' + count)) {
-        const projectImage = document.querySelector('#project-image-' + count)
+        const projectImage = document.querySelector('#project-image-' + count);
         const projectImageFile = projectImage.querySelector('img');
 
         if (projectImageFile) {
