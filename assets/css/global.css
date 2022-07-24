@@ -64,15 +64,15 @@ a {
    transition: color .15s linear;
 }
 
-a:active,
-a:target {
-   color: #FFCD00;
-}
-
 @media (hover: hover) {
    a:hover {
       color: #FFCD00;
    }
+}
+
+a:active,
+a:target {
+   color: #FFCD00;
 }
 
 /* Global */
