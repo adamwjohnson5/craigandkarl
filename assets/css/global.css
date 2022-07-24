@@ -291,13 +291,13 @@ header h2 span {
 
 /* Sections */
 
-section {
+.section {
    display: none;
    margin-top: 160px;
 }
 
 @media only screen and (max-width: 768px) {
-   section {
+   .section {
       margin-top: 120px;
    }
 }

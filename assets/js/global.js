@@ -166,7 +166,7 @@ function showSection() {
         window.scrollTo(0, 0); // Scroll page to top
     }, 100); // Wait for display change
 
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('.section');
 
     // Loop all sections and reset
     for (let x = 0; x < sections.length; x++) {
