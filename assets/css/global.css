@@ -64,7 +64,8 @@ a {
    transition: color .15s linear;
 }
 
-a:active {
+a:active,
+a:target {
    color: #FFCD00;
 }
 
