@@ -6,94 +6,143 @@ https://github.com/awj5
 -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Craig & Karl</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Hi, we're Craig & Karl, we live in different parts of the world (New York and London) but collaborate daily to create bold, bright and often humorous work." />
-        <meta name="theme-color" content="#000" />
-        <link rel="icon" href="assets/img/icon_address.png" />
-        <link rel="preload" href="assets/fonts/GothamBold.woff2" as="font" crossorigin="anonymous" />
-        <link rel="preload" href="assets/fonts/GothamBook.woff2" as="font" crossorigin="anonymous" />
-        <link rel="stylesheet" href="assets/css/global.css" />
+  <head>
+    <title>Craig & Karl</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hi, we're Craig & Karl, we live in different parts of the world (New York and London) but collaborate daily to create bold, bright and often humorous work."
+    />
+    <meta name="theme-color" content="#000" />
+    <meta property="og:url" content="https://www.craigandkarl.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Craig & Karl" />
+    <meta
+      property="og:description"
+      content="Hi, we're Craig & Karl, we live in different parts of the world (New York and London) but collaborate daily to create bold, bright and often humorous work."
+    />
+    <meta property="og:image" content="https://www.craigandkarl.com/assets/img/og.jpg" />
+    <link rel="icon" href="assets/img/icon_address.png" />
+    <link rel="preload" href="assets/fonts/GothamBold.woff2" as="font" crossorigin="anonymous" />
+    <link rel="preload" href="assets/fonts/GothamBook.woff2" as="font" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/css/global.css" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3NNRHXTQ7"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3NNRHXTQ7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-          gtag('config', 'G-M3NNRHXTQ7');
-        </script>
-    </head>
+      gtag("config", "G-M3NNRHXTQ7");
+    </script>
+  </head>
 
-    <body>
-        <!-- Header -->
-        <header>
-            <h1><img src="assets/img/logo.png" alt="Craig & Karl" /></h1>
-            <h2><span>#</span></h2>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1><img src="assets/img/logo.png" alt="Craig & Karl" /></h1>
+      <h2><span>#</span></h2>
 
-            <nav>
-                <a href="javascript: navClick('.');" id="nav-home">Our Projects</a>
-                <a href="javascript: navClick('about');" id="nav-about">About Us</a>
-                <a href="http://shop.craigandkarl.com" target="_blank">Shop</a>
-                <a href="https://www.instagram.com/craigandkarl" target="_blank">Instagram</a>
-                <a href="https://foundation.app/craigandkarl" target="_blank">NFTs</a>
-            </nav>
+      <nav>
+        <a href="javascript: navClick('.');" id="nav-home">Our Projects</a>
+        <a href="javascript: navClick('about');" id="nav-about">About Us</a>
+        <a href="http://shop.craigandkarl.com" target="_blank">Shop</a>
+        <a href="https://www.instagram.com/craigandkarl" target="_blank">Instagram</a>
+        <a href="https://foundation.app/craigandkarl" target="_blank">NFTs</a>
+      </nav>
 
-            <div id="burger"><span></span><span></span><span></span></div>
+      <div id="burger"><span></span><span></span><span></span></div>
 
-            <div id="clocks">
-                <div class="clock" id="clock-craig">
-                    <p><span>CRAIG<span class="clock-status"></span></span><span>NEW YORK</span><span class="clock-day"></span><span class="clock-date"></span></p>
-                    <div class="clockface"><div class="clockface-hour"></div><div class="clockface-minute"></div><div class="clockface-second"></div></div>
-                    <img src="assets/img/clocks/08-1.gif" alt="Craig" />
-                </div>
-
-                <div class="clock" id="clock-karl">
-                    <p><span>KARL<span class="clock-status"></span></span><span>LONDON</span><span class="clock-day"></span><span class="clock-date"></span></p>
-                    <div class="clockface"><div class="clockface-hour"></div><div class="clockface-minute"></div><div class="clockface-second"></div></div>
-                    <img src="assets/img/clocks/08-1.gif" alt="Karl" />
-                </div>
-            </div>
-        </header>
-
-        <!-- Sections -->
-        <!-- Home -->
-        <div class="section" id="section-home">
-            <div id="project-thumbs"></div>
-
-            <div id="project">
-                <h2>#</h2>
-                <div id="project-wrapper"></div>
-
-                <footer>
-                    <div onclick="" class="footer-link" id="footer-link-prev">PREVIOUS PROJECT<span></span></div><div onclick="" class="footer-link" id="footer-link-next">NEXT PROJECT<span></span></div>
-
-                    <div id="footer-social">
-                        <a href="https://www.instagram.com/craigandkarl/" target="_blank"><img src="assets/img/social_ig.png" alt="Instagram" /></a><a href="https://www.facebook.com/craigandkarl/" target="_blank"><img src="assets/img/social_fb.png" alt="Facebook" /></a><a href="https://twitter.com/craigandkarl" target="_blank"><img src="assets/img/social_twitter.png" alt="Twitter" /></a>
-                    </div>
-                </footer>
-            </div>
+      <div id="clocks">
+        <div class="clock" id="clock-craig">
+          <p>
+            <span>CRAIG<span class="clock-status"></span></span><span>NEW YORK</span><span class="clock-day"></span
+            ><span class="clock-date"></span>
+          </p>
+          <div class="clockface">
+            <div class="clockface-hour"></div>
+            <div class="clockface-minute"></div>
+            <div class="clockface-second"></div>
+          </div>
+          <img src="assets/img/clocks/08-1.gif" alt="Craig" />
         </div>
 
-        <!-- About -->
-        <div class="section" id="section-about">
-            <div class="about-column" id="about-text">
-                <p><img src="assets/img/hello.png" alt="Hello" />Hi, we're Craig Redman &amp; Karl Maier, we live in different parts of the world (New York &amp; London) but collaborate daily to create bold work that is filled with simple messages executed in a thoughtful and often humorous way. We work in a variety of mediums from illustration through to installations.<br /><br />We've had work exhibited around the world, most notably at the Musée de la Publicité (Paris), Onassis Cultural Centre (Athens), Museum for Contemporary Art (Mexico) and the Museum of the Moving Image (New York) and we've worked on projects for clients like LVMH, Google, Nike, Apple, Vogue, Vanity Fair, The Washington Post and The New York Times.<br /><br />Our email is <a href="mailto:more@craigandkarl.com" id="about-more">more@craigandkarl.com</a>, or you can contact us at <a href="mailto:craig@craigandkarl.com">craig@craigandkarl.com</a> and <a href="mailto:karl@craigandkarl.com">karl@craigandkarl.com</a><br /><br />You can also find us on <a href="https://www.instagram.com/craigandkarl" target="_blank">Instagram</a>, <a href="https://www.facebook.com/craigandkarl/" target="_blank">Facebook</a> and <a href="https://twitter.com/craigandkarl" target="_blank">Twitter</a>.<br /><br />Site by <a href="https://www.adamjohnson.org" target="_blank">Adam Johnson</a></p>
-            </div>
-
-            <div class="about-column" id="about-image"><img src="assets/img/ck.png" alt="Craig & Karl" /></div>
+        <div class="clock" id="clock-karl">
+          <p>
+            <span>KARL<span class="clock-status"></span></span><span>LONDON</span><span class="clock-day"></span
+            ><span class="clock-date"></span>
+          </p>
+          <div class="clockface">
+            <div class="clockface-hour"></div>
+            <div class="clockface-minute"></div>
+            <div class="clockface-second"></div>
+          </div>
+          <img src="assets/img/clocks/08-1.gif" alt="Karl" />
         </div>
-        <!-- END Sections -->
+      </div>
+    </header>
 
-        <!-- JS -->
-        <script src="assets/js/plugins/moment.min.js"></script>
-        <script src="assets/js/plugins/moment-timezone-with-data.min.js"></script>
-        <script src="assets/js/plugins/pattern.min.js"></script>
-        <script src="assets/js/global.js"></script>
-        <script src="assets/js/projects.js"></script>
-        <script src="assets/js/about.js"></script>
-    </body>
+    <!-- Sections -->
+    <!-- Home -->
+    <div class="section" id="section-home">
+      <div id="project-thumbs"></div>
+
+      <div id="project">
+        <h2>#</h2>
+        <div id="project-wrapper"></div>
+
+        <footer>
+          <div onclick="" class="footer-link" id="footer-link-prev">PREVIOUS PROJECT<span></span></div>
+          <div onclick="" class="footer-link" id="footer-link-next">NEXT PROJECT<span></span></div>
+
+          <div id="footer-social">
+            <a href="https://www.instagram.com/craigandkarl/" target="_blank"
+              ><img src="assets/img/social_ig.png" alt="Instagram" /></a
+            ><a href="https://www.facebook.com/craigandkarl/" target="_blank"
+              ><img src="assets/img/social_fb.png" alt="Facebook" /></a
+            ><a href="https://twitter.com/craigandkarl" target="_blank"
+              ><img src="assets/img/social_twitter.png" alt="Twitter"
+            /></a>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="section" id="section-about">
+      <div class="about-column" id="about-text">
+        <p>
+          <img src="assets/img/hello.png" alt="Hello" />Hi, we're Craig Redman &amp; Karl Maier, we live in different
+          parts of the world (New York &amp; London) but collaborate daily to create bold work that is filled with
+          simple messages executed in a thoughtful and often humorous way. We work in a variety of mediums from
+          illustration through to installations.<br /><br />We've had work exhibited around the world, most notably at
+          the Musée de la Publicité (Paris), Onassis Cultural Centre (Athens), Museum for Contemporary Art (Mexico) and
+          the Museum of the Moving Image (New York) and we've worked on projects for clients like LVMH, Google, Nike,
+          Apple, Vogue, Vanity Fair, The Washington Post and The New York Times.<br /><br />Our email is
+          <a href="mailto:more@craigandkarl.com" id="about-more">more@craigandkarl.com</a>, or you can contact us at
+          <a href="mailto:craig@craigandkarl.com">craig@craigandkarl.com</a> and
+          <a href="mailto:karl@craigandkarl.com">karl@craigandkarl.com</a><br /><br />You can also find us on
+          <a href="https://www.instagram.com/craigandkarl" target="_blank">Instagram</a>,
+          <a href="https://www.facebook.com/craigandkarl/" target="_blank">Facebook</a> and
+          <a href="https://twitter.com/craigandkarl" target="_blank">Twitter</a>.<br /><br />Site by
+          <a href="https://www.adamjohnson.org" target="_blank">Adam Johnson</a>
+        </p>
+      </div>
+
+      <div class="about-column" id="about-image"><img src="assets/img/ck.png" alt="Craig & Karl" /></div>
+    </div>
+    <!-- END Sections -->
+
+    <!-- JS -->
+    <script src="assets/js/plugins/moment.min.js"></script>
+    <script src="assets/js/plugins/moment-timezone-with-data.min.js"></script>
+    <script src="assets/js/plugins/pattern.min.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/about.js"></script>
+  </body>
 </html>
